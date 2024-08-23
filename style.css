@@ -1,0 +1,50 @@
+#input_command{
+    position: absolute;
+    left:0;
+    bottom: 0;
+    width:100vw;
+    height:5vh;
+    border:none;
+    border-top:0.1px solid white;
+    outline:none;
+    padding: 0;
+    font-size:4vh;
+}
+
+
+
+*{
+    color-scheme: dark;
+}
+
+#selected{
+    text-decoration: underline;
+}
+
+#command_complete, #defined_links{
+    font-size:3vh;
+    position: absolute;
+    left:0;
+    width:calc(70vw - 2px);
+    border-right: 2px solid white;
+    overflow: auto;
+    height:calc(95vh / 2 - 2.1px);
+}
+
+#command_complete{
+    top: 0;
+}
+
+#defined_links{
+    border-top:2px solid white;
+    top:calc(95vh / 2 - 2.1px);
+}
+
+#visual_menu{
+    position: absolute;
+    right:0;
+    height:calc(95vh - 2px);
+    top:0;
+    font-size: 3vh;
+    width:30vw;
+}
