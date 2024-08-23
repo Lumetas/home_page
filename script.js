@@ -4,6 +4,11 @@ const command_completer = document.getElementById("command_complete");
 const defined_links = document.getElementById("defined_links");
 const visual_menu = document.getElementById("visual_menu");
 let index = 0;
+let config_page = `
+<input id='input_plugin' type="file">
+<button onclick='plugin_manager.configure_plugin()'>load plugin</button>
+<textarea id='plugins_list' style='width:100%; height:30vh; resize:none; padding:0; margin:0; border:none; background:rgb(10,10,10);'></textarea>
+`;
 let pressed = {};
 
 function init(){
@@ -121,11 +126,7 @@ const commands_functions = {
     },
 
     config: function(){
-        visual_menu.innerHTML = `
-        <input id='input_plugin' type="file">
-        <button onclick='plugin_manager.configure_plugin()'>load plugin</button>
-        <textarea id='plugins_list' style='width:100%; height:30vh; resize:none; padding:0; margin:0; border:none; background:rgb(10,10,10);'></textarea>
-        `
+        visual_menu.innerHTML = config_page;
         let plugin_list = document.getElementById('plugins_list');
         plugin_list.value = plugin_manager.get_plugins().join('\n');
         plugin_list.oninput = () => {
