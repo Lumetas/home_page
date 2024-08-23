@@ -1,0 +1,9 @@
+commands_functions.open = () => {
+    let val = input.value.split(' ');
+        if (val[2] === "true"){
+            visual_menu.innerHTML = `<iframe style='position:absolute; left:0; top:0; width:100%; height:100%; margin:0; padding:0; border:none;' src='${val[1]}'></iframe>`
+        }
+        else {
+            window.location.href = val[1];
+        }
+}
