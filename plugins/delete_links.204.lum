@@ -1,0 +1,11 @@
+commands_functions.delete = () => {
+    let val = input.value.split(' ');
+    let defined = JSON.parse(localStorage.defined);
+    let new_arr = [];
+    for (let i = 0; i < defined.length; i++){
+        if (defined[i] !== val[1]){new_arr.push(defined[i])}
+    }
+    localStorage.defined = JSON.stringify(new_arr);
+}
+commands.push('delete');
+rewrite_command_completer();
